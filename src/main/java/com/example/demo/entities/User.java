@@ -25,7 +25,7 @@ public class User implements Serializable{
 	@Column(name="first_name")
 	private String firstName;
 	
-	@Column(name="last_name")
+	@Column(name="last_name")	
 	private String lastName;
 	
 	@Column(name="age")
@@ -37,7 +37,7 @@ public class User implements Serializable{
 	@Column(name="password")
 	private String password;
 	
-	@ManyToMany (mappedBy="projects")
+	@ManyToMany (mappedBy="users")
 	private List<Project> projects = new ArrayList<Project>();
 	
 	public User() {}

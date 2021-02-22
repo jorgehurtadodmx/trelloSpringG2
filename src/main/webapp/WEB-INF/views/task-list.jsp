@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Smartphone List | Awesome App</title>
+<title>Tasks list</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
@@ -28,8 +28,8 @@
 			<tr class = "thead-dark">
 				<th>Title</th>
 				<th>Description</th>
-				<th>User</th>
-				<th>Project</th>
+				<th>User list</th> <%-- Lista de usuarios --%>
+				<th>Project</th> 
 				<th>Tags</th>
 				<th>Actions</th>
 			</tr>
@@ -39,12 +39,12 @@
 				<tr>
 					<td>${task.title}</td>
 					<td>${task.description}</td>
-					<td>${task.user.name}</td>
+					<td>${task.users}</td>
 					<td>${task.project.name}</td>
 					<td>
 					
-						<c:forEach items="${task.tags}" var="etiqueta">
-							<span class="badge bg-success text-white">${etiqueta.name}</span>
+						<c:forEach items="${task.tags}" var="tag">
+							<span class="badge bg-success text-white">${tag.name}</span>
 						</c:forEach>
 
 					</td>

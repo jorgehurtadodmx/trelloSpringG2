@@ -25,7 +25,7 @@ public class Tag implements Serializable{
 	
 	private String color;
 	
-	@ManyToMany(mappedBy="tasks")
+	@ManyToMany(mappedBy="tags")
 	private List<Task> tasks = new ArrayList<Task>();
 	
 	
@@ -53,6 +53,19 @@ public class Tag implements Serializable{
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
+	}
+
+	@Override
+	public String toString() {
+		return "Tag [id=" + id + ", name=" + name + ", color=" + color + ", tasks=" + tasks + "]";
 	}
 	
 	

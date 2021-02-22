@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -37,30 +40,44 @@ public class SpringProyecto2Application implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 
 		User user1 = new User();
-		user1.setName("Antonio");
-		userRepository.save(user1);
+		user1.setFirstName("Guillermo2");
+		//userRepository.save(user1);
 		
+		User user2 = new User();
+		user2.setFirstName("Jorge2");
+		userRepository.save(user2);
+		List<User> users = Arrays.asList(user1, user2);
 		Project project = new Project();
-		project.setName("PROYECTO 1");
-		projectRepository.save(project);
+		project.setName("PROYECTO 2");
+		//projectRepository.save(project);
 		
 		
 		Tag todo = new Tag();
 		todo.setName("NEW");
 		Tag inprogress = new Tag();
 		inprogress.setName("IN PROGRESS");
-		tagRepository.save(todo);
-		tagRepository.save(inprogress);
+	//	tagRepository.save(todo);
+	//	tagRepository.save(inprogress);
 		
 		Task task1 = new Task();
-		task1.setTitle("Programar controladores Spring MCV");
-		task1.setDescription("Creación clases Controller y métodos get y post mapping");
+		task1.setTitle("AAAAAAAAAAA2");
+		task1.setDescription("AAAAAAAAAAAA2");
 		task1.setProject(project);
-		task1.setUser(user1);
+		task1.setUsers(users);
 		task1.getTags().add(todo);
 		task1.getTags().add(inprogress);
 
-		taskRepository.save(task1);
+		//taskRepository.save(task1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
