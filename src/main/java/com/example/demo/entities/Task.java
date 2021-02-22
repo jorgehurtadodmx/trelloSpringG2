@@ -28,9 +28,11 @@ public class Task implements Serializable{
 	
 	private String description;
 	
-	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User user;
+	@ManyToMany
+	@JoinTable(name = "task_user",
+	joinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id"),
+	inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+	private List<User> users = new ArrayList<User>();
 	
 	@ManyToOne
 	@JoinColumn(name="project_id")
@@ -40,7 +42,7 @@ public class Task implements Serializable{
 	@JoinTable(name = "task_tag",
 	joinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id"),
 	inverseJoinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"))
-	private List<Tag> tags = new ArrayList<>();
+	private List<Tag> tags = new ArrayList<Tag>();
 	
 	public Task() {}
 
@@ -68,12 +70,14 @@ public class Task implements Serializable{
 		this.description = description;
 	}
 
-	public User getUser() {
-		return user;
+
+
+	public List<User> getUsers() {
+		return users;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
 	public Project getProject() {
@@ -90,6 +94,12 @@ public class Task implements Serializable{
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", title=" + title + ", description=" + description + ", users=" + users
+				+ ", project=" + project + ", tags=" + tags + "]";
 	}
 	
 	
