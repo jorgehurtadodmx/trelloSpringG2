@@ -22,7 +22,7 @@ public class User implements Serializable{
 	
 	private String name;
 
-	private string guillermo;
+	private string guillermoiglesias;
 	
 	public User() {}
 
