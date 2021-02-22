@@ -12,6 +12,8 @@ import javax.persistence.Table;
 @Table(name="users")
 public class User implements Serializable{
 
+
+//Prueba guillermo
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
@@ -19,6 +21,8 @@ public class User implements Serializable{
 	private Long id;
 	
 	private String name;
+
+	private string guillermo;
 	
 	public User() {}
 
