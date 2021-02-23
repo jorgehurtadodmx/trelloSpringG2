@@ -34,7 +34,7 @@ public class Project implements Serializable{
 	private String description;
 	
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "project_users",
 	joinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"),
 	inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
@@ -46,8 +46,19 @@ public class Project implements Serializable{
 	
 	
 	
+
+
 	public Project() {}
 
+	
+	public Project(String name, String description, List<User> users, List<Task> tasks) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.users = users;
+		this.tasks = tasks;
+	}
+	
 	public Long getId() {
 		return id;
 	}

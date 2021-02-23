@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 import com.example.demo.entities.Project;
 import com.example.demo.entities.Tag;
 import com.example.demo.entities.Task;
@@ -49,16 +50,22 @@ public class SpringProyecto2Application implements CommandLineRunner{
 		List<User> users = Arrays.asList(user1, user2);
 		Project project = new Project();
 		project.setName("PROYECTO 2");
-		//projectRepository.save(project);
+		projectRepository.save(project); //ESTE LO CREA EN /PROJECT
 		
 		
 		Tag todo = new Tag();
+		Tag todo2 = new Tag("nombretag2","colortag");
 		todo.setName("NEW");
 		Tag inprogress = new Tag();
 		inprogress.setName("IN PROGRESS");
-	//	tagRepository.save(todo);
-	//	tagRepository.save(inprogress);
+		List<Tag> tags = Arrays.asList(todo, todo2);
 		
+		tagRepository.save(todo);
+		tagRepository.save(inprogress);
+		
+		
+		
+		Task task2 = new Task("tareanumero2","descriptiontask2",users, project, tags);
 		Task task1 = new Task();
 		task1.setTitle("AAAAAAAAAAA2");
 		task1.setDescription("AAAAAAAAAAAA2");
@@ -66,11 +73,12 @@ public class SpringProyecto2Application implements CommandLineRunner{
 		task1.setUsers(users);
 		task1.getTags().add(todo);
 		task1.getTags().add(inprogress);
-
-		//taskRepository.save(task1);
 		
+		List<Task> tasks = Arrays.asList(task1);
+		//taskRepository.save(tasks);
 		
-		
+		Project proj1 = new Project("project one","soy el nuewwwmero uno",users, tasks);
+		//projectRepository.save(proj1);
 		
 		
 		

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +35,7 @@ public class Task implements Serializable{
 	inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
 	private List<User> users = new ArrayList<User>();
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="project_id")
 	private Project project;
 	
@@ -45,6 +46,21 @@ public class Task implements Serializable{
 	private List<Tag> tags = new ArrayList<Tag>();
 	
 	public Task() {}
+
+	
+	
+	
+	public Task(String title, String description, List<User> users, Project project, List<Tag> tags) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.users = users;
+		this.project = project;
+		this.tags = tags;
+	}
+
+
+
 
 	public Long getId() {
 		return id;

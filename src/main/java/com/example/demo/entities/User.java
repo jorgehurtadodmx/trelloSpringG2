@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,10 +38,26 @@ public class User implements Serializable{
 	@Column(name="password")
 	private String password;
 	
-	@ManyToMany (mappedBy="users")
+	@ManyToMany (mappedBy="users",  cascade = CascadeType.MERGE)
 	private List<Project> projects = new ArrayList<Project>();
 	
 	public User() {}
+
+	
+	
+	
+	public User(String firstName, String lastName, Integer age, String email, String password, List<Project> projects) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.email = email;
+		this.password = password;
+		this.projects = projects;
+	}
+
+
+
 
 	public Long getId() {
 		return id;
