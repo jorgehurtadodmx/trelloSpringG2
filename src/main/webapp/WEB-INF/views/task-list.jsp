@@ -39,7 +39,14 @@
 				<tr>
 					<td>${task.title}</td>
 					<td>${task.description}</td>
-					<td>${task.users}</td>
+					
+					<td>
+
+						<c:forEach items="${task.users}" var="user">
+							<span class>${user.firstName}</span>
+						</c:forEach> <%-- añadir <a> links que redirigan a user-view--%>
+					
+					</td>
 					<td>${task.project.name}</td>
 					<td>
 					

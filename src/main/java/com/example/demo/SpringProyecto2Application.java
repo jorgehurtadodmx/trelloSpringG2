@@ -38,7 +38,7 @@ public class SpringProyecto2Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		
 		User user1 = new User();
 		user1.setFirstName("Guillermo2");
 		//userRepository.save(user1);
