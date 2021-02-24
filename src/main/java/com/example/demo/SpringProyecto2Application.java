@@ -63,20 +63,18 @@ public class SpringProyecto2Application implements CommandLineRunner{
 		//projects
 		
 		Project project1 = new Project("project 1","info de project 1",usersproject1, new ArrayList<>());
-		project1.setName("project 1");
-		project1.setUsers(usersproject1);
 		projectRepository.save(project1); 
 		
 		Project project2 = new Project("project 2","proyecto trello creado en JAVA",usersproject2, new ArrayList<>());
 		projectRepository.save(project2);
 		
-		// tags 
+		// tags (assigned to tasks)
 		
 		Tag todo = new Tag();
 		todo.setName("NEW");
 	
-		Tag todo2 = new Tag("nombretag2","colortag");
-		
+		Tag todo2 = new Tag();
+		todo2.setName("DONE");
 		Tag inprogress = new Tag();
 		inprogress.setName("IN PROGRESS");
 		
@@ -102,7 +100,7 @@ public class SpringProyecto2Application implements CommandLineRunner{
 		taskRepository.save(task3);
 
 		
-		List<Task> tasks = Arrays.asList(task1);
+		List<Task> tasks = Arrays.asList(task1, task2);
 		taskRepository.saveAll(tasks);
 
 		

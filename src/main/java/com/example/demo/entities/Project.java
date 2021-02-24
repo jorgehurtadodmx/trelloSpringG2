@@ -15,6 +15,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 @Table(name="projects")
 public class Project implements Serializable{
@@ -40,7 +43,9 @@ public class Project implements Serializable{
 	inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
 	private List<User> users = new ArrayList<User>();
 	
+	
 	@OneToMany(mappedBy="project") //deberia de estar corregida
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Task> tasks = new ArrayList<Task>();
 	
 	
