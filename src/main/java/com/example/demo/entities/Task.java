@@ -35,7 +35,7 @@ public class Task implements Serializable{
 	inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
 	private List<User> users = new ArrayList<User>();
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne()
 	@JoinColumn(name="project_id")
 	private Project project;
 	

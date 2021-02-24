@@ -34,13 +34,13 @@ public class Project implements Serializable{
 	private String description;
 	
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany()
 	@JoinTable(name = "project_users",
 	joinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"),
 	inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
 	private List<User> users = new ArrayList<User>();
 	
-	@OneToMany(mappedBy="project" , cascade = CascadeType.ALL) //deberia de estar corregida
+	@OneToMany(mappedBy="project") //deberia de estar corregida
 	private List<Task> tasks = new ArrayList<Task>();
 	
 	

@@ -38,7 +38,7 @@ public class User implements Serializable{
 	@Column(name="password")
 	private String password;
 	
-	@ManyToMany (mappedBy="users",  cascade = CascadeType.MERGE)
+	@ManyToMany (mappedBy="users")
 	private List<Project> projects = new ArrayList<Project>();
 	
 	public User() {}
