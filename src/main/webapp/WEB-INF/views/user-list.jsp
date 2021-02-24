@@ -29,7 +29,7 @@
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Age</th>
-				<th>EMail</th> 
+				<th>Email</th> 
 				<th>Password</th>
 				<th>Project List</th>
 				<th>Actions</th>

@@ -41,61 +41,77 @@ public class SpringProyecto2Application implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		User user1 = new User();
-		user1.setFirstName("Guillermo2");
+
+		//users
+		
+		User user1 = new User("Meme", "lopez",28,"meme@gmail.com","noteladigo", new ArrayList<>());
 		userRepository.save(user1);
 		
 		User user2 = new User();
-		user2.setFirstName("Jorge2");
+		user2.setFirstName("Guillermo");
 		userRepository.save(user2);
+
+		User user3 = new User();
+		user3.setFirstName("Jorge");
+		userRepository.save(user3);
 		
-		List<User> users = Arrays.asList(user1, user2);
+		//user-lists
 		
+		List<User> usersproject1 = Arrays.asList(user3);
+		List<User> usersproject2 = Arrays.asList(user1, user2);
 		
-		Project project = new Project();
-		project.setName("PROYECTO 2");
-		projectRepository.save(project); //ESTE LO CREA EN /PROJECT
+		//projects
 		
+		Project project1 = new Project("project 1","info de project 1",usersproject1, new ArrayList<>());
+		project1.setName("project 1");
+		project1.setUsers(usersproject1);
+		projectRepository.save(project1); 
+		
+		Project project2 = new Project("project 2","proyecto trello creado en JAVA",usersproject2, new ArrayList<>());
+		projectRepository.save(project2);
+		
+		// tags 
 		
 		Tag todo = new Tag();
 		todo.setName("NEW");
-		
+	
 		Tag todo2 = new Tag("nombretag2","colortag");
-
+		
 		Tag inprogress = new Tag();
 		inprogress.setName("IN PROGRESS");
 		
 		List<Tag> tags = Arrays.asList(todo, todo2, inprogress);
-		
 		tagRepository.saveAll(tags);
+	
+		//tasks
 		
-		
-		
-//		Task task2 = new Task("tareanumero2","descriptiontask2",users, project, tags);
 		Task task1 = new Task();
-		task1.setTitle("AAAAAAAAAAA2");
-		task1.setDescription("AAAAAAAAAAAA2");
-		task1.setProject(project);
-		task1.setUsers(users);
+		task1.setTitle("tarea 1");
+		task1.setDescription("descripcion tarea 1");
+		task1.setProject(project2);
+		task1.setUsers(usersproject2);
 		task1.getTags().add(todo);
 		task1.getTags().add(inprogress);
-		
-		
-		List<Task> tasks = Arrays.asList(task1);
-		taskRepository.saveAll(tasks);
-		
-		Project proj1 = new Project("project one","soy el nuewwwmero uno",users, new ArrayList<>());
-		projectRepository.save(proj1);
-		
-		Task task2 = new Task();
-		task2.setTitle("Tarea 2");
-		task2.setProject(proj1);
+		Task task2 = new Task("tareanumero2","descriptiontask2",usersproject2, project2, tags);
 		taskRepository.save(task2);
 		
 		Task task3 = new Task();
 		task3.setTitle("Tarea 3");
-		task3.setProject(proj1);
+		task3.setProject(project1);
 		taskRepository.save(task3);
+
+		
+		List<Task> tasks = Arrays.asList(task1);
+		taskRepository.saveAll(tasks);
+
+		
+		//Task task2 = new Task();
+	//	task2.setTitle("Tarea 2");
+	//	task2.setProject(project2);
+	//	taskRepository.save(task2);
+		
+		
+
 
 		
 		

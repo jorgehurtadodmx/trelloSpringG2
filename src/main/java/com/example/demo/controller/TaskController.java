@@ -18,4 +18,14 @@ public class TaskController {
 		model.addAttribute("tasks", taskRepository.findAll());
 		return "task-list";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

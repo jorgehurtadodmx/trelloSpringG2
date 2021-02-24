@@ -55,9 +55,9 @@
 
 
 					<td> 
-						<a class="btn btn-info" href = "${pageContext.request.contextPath}/users/${user.id}/view">Ver</a> 
-						<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Editar</a> 
-						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Borrar</a>
+						<a class="btn btn-info" href = "${pageContext.request.contextPath}/projects/${project.id}/view">View</a> 
+						<a class="btn btn-success" href = "${pageContext.request.contextPath}/projects/${project.id}/edit">Edit</a> 
+						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/projects/${project.id}/delete">Delete</a>
 						 
 					</td>
 				</tr>
