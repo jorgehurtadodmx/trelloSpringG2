@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.entities.Project;
+import com.example.demo.entities.Task;
 import com.example.demo.entities.User;
 import com.example.demo.repository.ProjectRepository;
 import com.example.demo.repository.UserRepository;
@@ -75,7 +77,25 @@ public class UserController {
 		userRepository.save(user);
 		return "redirect:/users"; 
 	}
-	
+
+	//deletion of single project
+	//@GetMapping("/projects/{id}/delete")
+//	public String borrarProjecto(@PathVariable Long id) {
+	//	Optional<Project> projectOpt = projectRepository.findById(id);
+	//	if (!projectOpt.isPresent()) 
+	//		return "redirect:/projects";
+		
+	//	Project project = projectOpt.get();
+		
+	//	for (Task task: project.getTasks()) {
+	//		task.setTags(new ArrayList<>());
+	//		task.setUsers(new ArrayList<>());
+	//	}
+	//	taskRepository.saveAll(project.getTasks());
+		
+	//	projectRepository.deleteById(id);
+	//	return "redirect:/projects"; //fallo
+	//}
 	
 	
 	

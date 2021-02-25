@@ -20,7 +20,7 @@
 					<p><b>Name</b>: ${task.title}</p>
 					<p><b>Description</b>: ${task.description}</p>
 					
-					
+					<p><b>Belongs to Project:</b>: ${task.project.name}</p>
 					
 					<h3>Assigned Users</h3>
 					
@@ -41,9 +41,9 @@
 					</ul>
 					
 					<div class="mt-5">
-			<a class="btn btn-info" href = "${pageContext.request.contextPath}/users">Volver</a> 
-			<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Editar</a> 
-			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Borrar</a>
+			<a class="btn btn-info" href = "${pageContext.request.contextPath}/tasks">Volver</a> 
+			<a class="btn btn-success" href = "${pageContext.request.contextPath}/tasks/${user.id}/edit">Editar</a> 
+			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/tasks/${user.id}/delete">Borrar</a>
 
 			
 			</div>

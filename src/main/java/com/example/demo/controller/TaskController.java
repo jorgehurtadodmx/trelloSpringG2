@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 import com.example.demo.entities.Task;
+
 import com.example.demo.repository.ProjectRepository;
 import com.example.demo.repository.TagRepository;
 import com.example.demo.repository.TaskRepository;
@@ -61,19 +62,34 @@ public class TaskController {
 	}
 	
 	@PostMapping
-	public String crearTasko(@ModelAttribute("task") Task task) {
+	public String crearTask(@ModelAttribute("task") Task task) {
 		taskRepository.save(task);
 		return "redirect:/tasks";
 	}
 	
 	
-	@GetMapping("/{id}/delete")
+	@GetMapping("/tasks/{id}/delete")
 	public String borrarTask(@PathVariable Long id) {
 		taskRepository.deleteById(id);
 		return "redirect:/tasks";
 	}
 	
-	
+	//editing single user
+	@GetMapping("/tasks/{id}/edit")
+	public String editTask(@PathVariable Long id, Model model) {
+		if(id == null) // 1. se comprueba que el id no sea nulo
+			return "redirect:/tasks";
+		
+		Optional<Task> taskOpt = taskRepository.findById(id);
+		if (taskOpt.isPresent()) { // 2. se comprueba que existe un producto para ese id
+			model.addAttribute("task", taskOpt.get());
+
+			return "task-edit";
+		}
+		model.addAttribute("error", "No existe la tarea solicitada");
+		return "redirect:/tasks";
+	}
+
 	
 	
 }

@@ -60,6 +60,7 @@ public class ProjectController {
 	@GetMapping("projects/new")
 	public String obtenerFormularioProyecto(Model model) {
 		model.addAttribute("project", new Project());
+		model.addAttribute("tasks", taskRepository.findAll());
 		model.addAttribute("users", userRepository.findAll());
 		return "project-edit"; // aqui devolvemos la vista
 
