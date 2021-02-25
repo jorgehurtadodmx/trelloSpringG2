@@ -90,7 +90,7 @@ public class ProjectController {
 		return "redirect:/projects"; //fallo
 	}
 	
-	//deletion of single project
+	//deletion of ALL project
 	@GetMapping("/projects/delete/all")
 	public String borrarProjectos() {
 
@@ -106,6 +106,21 @@ public class ProjectController {
 		return "redirect:/projects"; //fallo
 	}
 	
-	
+	// edition of a project
+	@GetMapping("/projects/{id}/edit")
+	public String editProject(@PathVariable Long id, Model model) {
+		if(id == null) // 1. se comprueba que el id no sea nulo
+			return "redirect:/projects";
+		
+		Optional<Project> projectOpt = projectRepository.findById(id);
+		if (projectOpt.isPresent()) { // 2. se comprueba que existe un producto para ese id
+			model.addAttribute("project", projectOpt.get());
+			model.addAttribute("users", userRepository.findAll());
+			model.addAttribute("tasks", taskRepository.findAll());
+			return "project-edit";
+		}
+		model.addAttribute("error", "No existe el projecto solicitado");
+		return "redirect:/projects";
+	}
 
 }

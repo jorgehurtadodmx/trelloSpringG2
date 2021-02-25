@@ -12,7 +12,7 @@
 <body>
 	
 	<div class = "pt-5 container">
-			<h2>Project ${project.id}</h2>
+			<h2>Task ID: ${task.id}</h2>
 			<hr>
 		<div class = " row justify-content-center">
 

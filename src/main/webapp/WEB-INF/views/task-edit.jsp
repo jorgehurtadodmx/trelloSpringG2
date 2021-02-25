@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Project creation</title>
+<title>User creation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
 	
 	<div class = "pt-5 container">
-			<h2>Project ${project.id}</h2>
+			<h2>Task ID: ${task.id}</h2>
 			<hr>
 		<div class = " row justify-content-center">
 
@@ -20,25 +20,28 @@
 			
 			
 			
-				<form:form action = "${pageContext.request.contextPath}/projects" method="POST" modelAttribute="project">
+				<form:form action = "${pageContext.request.contextPath}/tasks" method="POST" modelAttribute="task">
 					<div class="form-group">
-						<label for="name">Name</label>
-						<form:input path="name" class="form-control" />
+						<label for="title">Title</label>
+						<form:input path="title" class="form-control" />
 					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
 						<form:textarea path="description" class="form-control" />
 					</div>
 					<div class="form-group">
-						<label for="tasks">Task list</label>
-						<form:select path="tasks" items="${tasks}"  
-						itemLabel="title" itemValue="id" class="form-control"/>
+						<label for="task.users">User list</label>
+						<form:select class="form-select form-select-lg mb-3" path="task" items="${tasks.users}" itemLabel="firstName" itemValue="id"></form:select>
 					</div>
 					<div class="form-group">
-						<label for="users">User list</label>
-						<form:select path="users" items="${users}"  
-						itemLabel="firstName" itemValue="id" class="form-control"/>
+						<label for="task.project">Project</label>
+						<form:input path="task.project" class="form-control" />
 					</div>
+					<div class="form-group">
+						<label for="task.tags">Tag list</label>
+						<form:select class="form-select form-select-lg mb-3" path="tag" items="${tags}" itemLabel="name" itemValue="id"></form:select>
+					</div>
+
 				
 				<form:hidden path="id"/>
 				

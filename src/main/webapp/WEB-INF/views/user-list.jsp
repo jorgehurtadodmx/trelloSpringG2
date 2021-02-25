@@ -18,8 +18,8 @@
 		<p>${NOTIFICATION}</p>
 		
 		<p>
-			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/users/new">AÑADIR Tarea</a>
-			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/users/delete/all">BORRAR Tareas</a>
+			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/users/new">AÑADIR USER</a>
+			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/users/delete/all">BORRAR USERS</a>
 			
 		</p>
 	
