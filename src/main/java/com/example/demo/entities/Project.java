@@ -104,11 +104,12 @@ public class Project implements Serializable{
 		this.tasks = tasks;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Project [id=" + id + ", name=" + name + ", description=" + description + ", users=" + users + ", tasks="
-				+ tasks + "]";
+		return "Project [id=" + id + ", name=" + name + ", description=" + description + "]";
 	}
+
 	
 	
 

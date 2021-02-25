@@ -76,10 +76,14 @@ public class Tag implements Serializable{
 		this.tasks = tasks;
 	}
 
+
+
+
 	@Override
 	public String toString() {
-		return "Tag [id=" + id + ", name=" + name + ", color=" + color + ", tasks=" + tasks + "]";
+		return "Tag [id=" + id + ", name=" + name + ", color=" + color + "]";
 	}
+
 	
 	
 	

@@ -30,7 +30,7 @@
 						<form:textarea path="description" class="form-control" />
 					</div>
 					<div class="form-group">
-						<label for="price">User list</label>
+						<label for="users">User list</label>
 						<form:select path="users" items="${users}"  
 						itemLabel="firstName" itemValue="id" class="form-control"/>
 					</div>

@@ -35,8 +35,8 @@
 					<h3>Assigned Tags</h3>
 					
 					<ul>
-						<c:forEach items="$task.tags}" var="tag">
-							<li> <a href="${pageContext.request.contextPath}/tasks/${task.id}/view">${task.title}</a> </li>
+						<c:forEach items="${task.tags}" var="tag">
+							<li> <a href="${pageContext.request.contextPath}/tasks/${task.id}/view">${tag.name}</a> </li>
 						</c:forEach>
 					</ul>
 					

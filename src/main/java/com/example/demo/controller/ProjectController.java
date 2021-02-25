@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 import com.example.demo.entities.Project;
-
+import com.example.demo.entities.Task;
 import com.example.demo.repository.ProjectRepository;
+import com.example.demo.repository.TaskRepository;
+import com.example.demo.repository.UserRepository;
 
 
 @Controller
@@ -21,6 +25,14 @@ public class ProjectController {
 	
 	@Autowired
 	private ProjectRepository projectRepository;
+	
+	@Autowired
+	private TaskRepository taskRepository;
+	
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 	// main project site
 	@GetMapping("/projects")
 	public String findProject(Model model) {
@@ -48,7 +60,7 @@ public class ProjectController {
 	@GetMapping("projects/new")
 	public String obtenerFormularioProyecto(Model model) {
 		model.addAttribute("project", new Project());
-		model.addAttribute("projects", projectRepository.findAll());
+		model.addAttribute("users", userRepository.findAll());
 		return "project-edit"; // aqui devolvemos la vista
 
 	}
@@ -60,12 +72,39 @@ public class ProjectController {
 	
 	
 	//deletion of single project
-	//@GetMapping("/projects/{id}/delete")
-	//public String borrarProjecto(@PathVariable Long id) {
-	//projectRepository.deleteById(id);
-	//	return "redirect:/projects"; //fallo
-	//}
+	@GetMapping("/projects/{id}/delete")
+	public String borrarProjecto(@PathVariable Long id) {
+		Optional<Project> projectOpt = projectRepository.findById(id);
+		if (!projectOpt.isPresent()) 
+			return "redirect:/projects";
+		
+		Project project = projectOpt.get();
+		
+		for (Task task: project.getTasks()) {
+			task.setTags(new ArrayList<>());
+			task.setUsers(new ArrayList<>());
+		}
+		taskRepository.saveAll(project.getTasks());
+		
+		projectRepository.deleteById(id);
+		return "redirect:/projects"; //fallo
+	}
 	
+	//deletion of single project
+	@GetMapping("/projects/delete/all")
+	public String borrarProjectos() {
+
+		List<Project> projects = projectRepository.findAll();
+		for (Project project : projects) {
+			for (Task task: project.getTasks()) {
+				task.setTags(new ArrayList<>());
+				task.setUsers(new ArrayList<>());
+			}
+			taskRepository.saveAll(project.getTasks());
+		}
+		projectRepository.deleteAll();
+		return "redirect:/projects"; //fallo
+	}
 	
 	
 

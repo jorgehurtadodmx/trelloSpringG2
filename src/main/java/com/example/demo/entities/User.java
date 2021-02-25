@@ -115,11 +115,15 @@ public class User implements Serializable{
 		this.projects = projects;
 	}
 
+
+
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", email="
-				+ email + ", password=" + password + ", projects=" + projects + "]";
+				+ email + ", password=" + password + "]";
 	}
+
 
 	
 	

@@ -3,6 +3,8 @@ package com.example.demo.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -113,11 +115,14 @@ public class Task implements Serializable{
 		this.tags = tags;
 	}
 
+
+
+
 	@Override
 	public String toString() {
-		return "Task [id=" + id + ", title=" + title + ", description=" + description + ", users=" + users
-				+ ", project=" + project + ", tags=" + tags + "]";
+		return "Task [id=" + id + ", title=" + title + ", description=" + description + "]";
 	}
+
 	
 	
 
