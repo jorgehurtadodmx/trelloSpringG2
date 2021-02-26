@@ -58,10 +58,11 @@ public class TaskController {
 		model.addAttribute("task", new Task());
 		model.addAttribute("users", userRepository.findAll());
 		model.addAttribute("tags", tagRepository.findAll());
+		model.addAttribute("projects", projectRepository.findAll());
 		return "task-edit";
 	}
 	
-	@PostMapping
+	@PostMapping("/tasks")
 	public String crearTask(@ModelAttribute("task") Task task) {
 		taskRepository.save(task);
 		return "redirect:/tasks";
@@ -83,7 +84,9 @@ public class TaskController {
 		Optional<Task> taskOpt = taskRepository.findById(id);
 		if (taskOpt.isPresent()) { // 2. se comprueba que existe un producto para ese id
 			model.addAttribute("task", taskOpt.get());
-
+			model.addAttribute("users", userRepository.findAll());
+			model.addAttribute("tags", tagRepository.findAll());
+			model.addAttribute("projects", projectRepository.findAll());
 			return "task-edit";
 		}
 		model.addAttribute("error", "No existe la tarea solicitada");

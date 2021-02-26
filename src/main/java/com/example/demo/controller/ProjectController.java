@@ -61,6 +61,7 @@ public class ProjectController {
 	@GetMapping("projects/new")
 	public String obtenerFormularioProyecto(Model model) {
 		model.addAttribute("project", new Project());
+		// TODO - mostrar solo tareas que no estén ocupadas por otro proyecto
 		model.addAttribute("tasks", taskRepository.findAll());
 		model.addAttribute("users", userRepository.findAll());
 		return "project-edit"; // aqui devolvemos la vista
@@ -68,6 +69,14 @@ public class ProjectController {
 	}
 	@PostMapping("/projects")
 	public String postFormularioProyecto(@ModelAttribute("project") Project project) {
+		if (project.getTasks() != null && !project.getTasks().isEmpty()) {
+			for (Task task : project.getTasks()) 
+				task.setProject(project);
+			
+			taskRepository.saveAll(project.getTasks());
+		}
+			
+		
 		projectRepository.save(project);
 		return "redirect:/projects"; 
 	}

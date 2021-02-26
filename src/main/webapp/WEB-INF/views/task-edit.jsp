@@ -29,17 +29,20 @@
 						<label for="description">Description</label>
 						<form:textarea path="description" class="form-control" />
 					</div>
+
+<!-- 					selector una opción -->
 					<div class="form-group">
-						<label for="task.users">User list</label>
-						<form:select class="form-select form-select-lg mb-3" path="task" items="${tasks.users}" itemLabel="firstName" itemValue="id"></form:select>
+						<label for="project">Proyecto</label>
+						<form:select class="form-select form-select-lg mb-3" path="project" items="${projects}" itemLabel="name" itemValue="id"></form:select>
+					</div>
+<!-- 					Selectores múltiples-->
+					<div class="form-group">
+						<label for="users">User list</label>
+						<form:select class="form-select form-select-lg mb-3" path="users" items="${users}" itemLabel="firstName" itemValue="id"></form:select>
 					</div>
 					<div class="form-group">
-						<label for="task.project">Project</label>
-						<form:input path="task.project" class="form-control" />
-					</div>
-					<div class="form-group">
-						<label for="task.tags">Tag list</label>
-						<form:select class="form-select form-select-lg mb-3" path="tag" items="${tags}" itemLabel="name" itemValue="id"></form:select>
+						<label for="tags">Tag list</label>
+						<form:select class="form-select form-select-lg mb-3" path="tags" items="${tags}" itemLabel="name" itemValue="id"></form:select>
 					</div>
 
 				
