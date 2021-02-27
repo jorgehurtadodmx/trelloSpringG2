@@ -38,7 +38,15 @@
 <!-- 					Selectores múltiples-->
 					<div class="form-group">
 						<label for="users">User list</label>
-						<form:select class="form-select form-select-lg mb-3" path="users" items="${users}" itemLabel="firstName" itemValue="id"></form:select>
+<c:forEach items="${users}" var="user" varStatus="loop">
+<div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input"
+        id="${user.firstName}" name="${user.firstName}"> <label
+        class="custom-control-label" for="${user.firstName}">${user.firstName}</label>
+</div>
+
+</c:forEach>
+						
 					</div>
 					<div class="form-group">
 						<label for="tags">Tag list</label>

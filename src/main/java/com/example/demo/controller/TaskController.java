@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 import com.example.demo.entities.Task;
-
+import com.example.demo.entities.User;
 import com.example.demo.repository.ProjectRepository;
 import com.example.demo.repository.TagRepository;
 import com.example.demo.repository.TaskRepository;
@@ -65,6 +65,11 @@ public class TaskController {
 	@PostMapping("/tasks")
 	public String crearTask(@ModelAttribute("task") Task task) {
 		taskRepository.save(task);
+	//	for (User user : task.getUsers()) {
+	//		userRepository.save(user);
+	//			}
+
+	//	userRepository.saveAll(task.getUsers());
 		return "redirect:/tasks";
 	}
 	

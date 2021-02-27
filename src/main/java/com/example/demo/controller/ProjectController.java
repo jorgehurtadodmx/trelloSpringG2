@@ -73,7 +73,7 @@ public class ProjectController {
 			for (Task task : project.getTasks()) 
 				task.setProject(project);
 			
-			taskRepository.saveAll(project.getTasks());
+			taskRepository.saveAll(project.getTasks()); //error aqui
 		}
 			
 		
