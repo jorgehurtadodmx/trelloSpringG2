@@ -37,7 +37,7 @@
 					</div>
 <!-- 					Selectores múltiples-->
 					<div class="form-group">
-						<label for="users">User list</label>
+					<%-- 	<label for="users">User list</label>
 <c:forEach items="${users}" var="user" varStatus="loop">
 <div class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input"
@@ -47,7 +47,7 @@
 
 </c:forEach>
 						
-					</div>
+					</div> --%>
 					<div class="form-group">
 						<label for="tags">Tag list</label>
 						<form:select class="form-select form-select-lg mb-3" path="tags" items="${tags}" itemLabel="name" itemValue="id"></form:select>
@@ -57,6 +57,7 @@
 				<form:hidden path="id"/>
 				
 				<button class = "btn btn-success btn-lg" type = "submit" >Save</button>
+				
 				</form:form>
 			
 			

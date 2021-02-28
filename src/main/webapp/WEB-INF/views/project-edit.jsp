@@ -13,11 +13,12 @@
 	
 	<div class = "pt-5 container">
 			<h2>Project ${project.id}</h2>
+	
 			<hr>
 		<div class = " row justify-content-center">
 
 			<div class = "col-md-8">
-			
+				
 			
 			
 				<form:form action = "${pageContext.request.contextPath}/projects" method="POST" modelAttribute="project">
@@ -28,12 +29,12 @@
 					<div class="form-group">
 						<label for="description">Description</label>
 						<form:textarea path="description" class="form-control" />
-					</div>
-					<div class="form-group">
+					<%--</div>
+				 	<div class="form-group">
 						<label for="tasks">Task list</label>
 						<form:select path="tasks" items="${tasks}"  
 						itemLabel="title" itemValue="id" class="form-control"/>
-					</div>
+					</div>--%>
 					<div class="form-group">
 						<label for="users">User list</label>
 						<form:select path="users" items="${users}"  
@@ -43,6 +44,7 @@
 				<form:hidden path="id"/>
 				
 				<button class = "btn btn-success btn-lg" type = "submit" >Save</button>
+								
 				</form:form>
 			
 			

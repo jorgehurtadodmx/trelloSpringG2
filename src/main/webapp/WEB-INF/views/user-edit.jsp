@@ -45,7 +45,9 @@
 				
 				<form:hidden path="id"/>
 				
-				<button class = "btn btn-success btn-lg" type = "submit" >Save</button>
+			<%-- 	<button class = "btn btn-success btn-lg" type = "submit" >Save</button> back to user list --%>
+				<button class = "btn btn-success btn-lg" type = "submit" >Save</button> <%-- Save user and redirect to project-edit --%>
+				<a class="btn btn-info" href = "${pageContext.request.contextPath}/users">Go back</a> 
 				</form:form>
 			
 			

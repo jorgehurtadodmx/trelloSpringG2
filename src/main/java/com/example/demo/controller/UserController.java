@@ -96,7 +96,7 @@ public class UserController {
 	//	projectRepository.deleteById(id);
 	//	return "redirect:/projects"; //fallo
 	//}
-	
+
 	
 	
 	

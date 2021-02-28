@@ -41,9 +41,9 @@
 					</ul>
 					
 					<div class="mt-5">
-			<a class="btn btn-info" href = "${pageContext.request.contextPath}/users">Volver</a> 
-			<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Editar</a> 
-			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Borrar</a>
+			<a class="btn btn-info" href = "${pageContext.request.contextPath}/projects">Volver</a> 
+			<a class="btn btn-success" href = "${pageContext.request.contextPath}/projects/${project.id}/edit">Editar</a> 
+			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/projects/${project.id}/delete">Borrar</a>
 
 			
 			</div>
