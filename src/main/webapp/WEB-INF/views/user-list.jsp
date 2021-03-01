@@ -6,20 +6,20 @@
 <head>
 <title>User list</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
 	<div class = "pt-5 container">
 		
-		<h1>User list</h1>
+		<h1 style = "font-family: 'Josefin Sans', sans-serif;">User list</h1>
 		<hr/>
 		
 		<p>${NOTIFICATION}</p>
 		
 		<p>
-			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/users/new">AÑADIR USER</a>
-			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/users/delete/all">BORRAR USERS</a>
+			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/users/new">Add user</a>
+			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/users/delete/all">Delete all users</a>
 			
 		</p>
 	
@@ -46,15 +46,15 @@
 					<td>
 					
 						<c:forEach items="${user.projects}" var="project">
-							<span class="badge bg-success text-white">${project.name}</span>
+							<span class="badge bg-info text-white">${project.name}</span>
 						</c:forEach>
 
 					</td>
 					
 					<td> 
-						<a class="btn btn-info" href = "${pageContext.request.contextPath}/users/${user.id}/view">Ver</a> 
-						<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Editar</a> 
-						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Borrar</a>
+						<a class="btn btn-info" href = "${pageContext.request.contextPath}/users/${user.id}/view">View</a> 
+						<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Edit</a> 
+						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Delete</a>
 						 
 					</td>
 				</tr>

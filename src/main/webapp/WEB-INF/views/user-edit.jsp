@@ -6,13 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>User creation</title>
+<title>User creation/modification</title>
+   <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
-	
+		<jsp:include page="navbar.jsp"></jsp:include>
 	<div class = "pt-5 container">
-			<h2>User ID: ${user.id}</h2>
+			<h2 style = "font-family: 'Josefin Sans', sans-serif;">User ID: ${user.id}</h2>
 			<hr>
 		<div class = " row justify-content-center">
 
@@ -47,7 +48,7 @@
 				
 			<%-- 	<button class = "btn btn-success btn-lg" type = "submit" >Save</button> back to user list --%>
 				<button class = "btn btn-success btn-lg" type = "submit" >Save</button> <%-- Save user and redirect to project-edit --%>
-				<a class="btn btn-info" href = "${pageContext.request.contextPath}/users">Go back</a> 
+
 				</form:form>
 			
 			

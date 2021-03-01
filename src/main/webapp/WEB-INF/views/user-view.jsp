@@ -6,13 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Vista de usuarios individualmente</title>
+<title>User view</title>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-	
+		<jsp:include page="navbar.jsp"></jsp:include>
 	<div class = "pt-5 container">
-			<h2>Usuario ${user.id}</h2>
+			<h2 style = "font-family: 'Josefin Sans', sans-serif;">User ${user.id}</h2>
 			<hr>
 		<div class = " row justify-content-center">
 
@@ -33,9 +34,9 @@
 					</ul>
 					
 					<div class="mt-5">
-			<a class="btn btn-info" href = "${pageContext.request.contextPath}/users">Volver</a> 
-			<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Editar</a> 
-			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Borrar</a>
+			<a class="btn btn-info" href = "${pageContext.request.contextPath}/users">Go back</a> 
+			<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Edit</a> 
+			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Delete</a>
 
 			
 			</div>

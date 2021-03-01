@@ -4,22 +4,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tasks list</title>
+<title>Task list</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
 	<div class = "pt-5 container">
 		
-		<h1>Tareas</h1>
+		<h1 style = "font-family: 'Josefin Sans', sans-serif;">Task list</h1>
 		<hr/>
 		
 		<p>${NOTIFICATION}</p>
 		
 		<p>
-			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/tasks/new">AÑADIR Tarea</a>
-			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/tasks/delete/all">BORRAR Tareas</a>
+			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/tasks/new">Add task</a>
+			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/tasks/delete/all">Delete all tasks</a>
 			
 		</p>
 	
@@ -43,23 +44,25 @@
 					<td>
 
 						<c:forEach items="${task.users}" var="user">
-							<span class>${user.firstName}</span>
+							<span class="badge bg-success text-white">${user.firstName}</span>
 						</c:forEach> <%-- añadir <a> links que redirigan a user-view--%>
 					
 					</td>
-					<td>${task.project.name}</td>
+					<td>
+					<span class="badge bg-info text-white">${task.project.name}</span>
+					</td>
 					<td>
 					
 						<c:forEach items="${task.tags}" var="tag">
-							<span class="badge bg-success text-white">${tag.name}</span>
+							<span class="badge bg-warning text-white">${tag.name}</span>
 						</c:forEach>
 
 					</td>
 					
 					<td> 
-						<a class="btn btn-info" href = "${pageContext.request.contextPath}/tasks/${task.id}/view">Ver</a> 
-						<a class="btn btn-success" href = "${pageContext.request.contextPath}/tasks/${task.id}/edit">Editar</a> 
-						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/tasks/${task.id}/delete">Borrar</a>
+						<a class="btn btn-info" href = "${pageContext.request.contextPath}/tasks/${task.id}/view">View</a> 
+						<a class="btn btn-success" href = "${pageContext.request.contextPath}/tasks/${task.id}/edit">Edit</a> 
+						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/tasks/${task.id}/delete">Delete</a>
 						 
 					</td>
 				</tr>

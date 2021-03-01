@@ -6,13 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Vista de usuarios individualmente</title>
+<title>Task view</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-	
+		<jsp:include page="navbar.jsp"></jsp:include>
 	<div class = "pt-5 container">
-			<h2>Task ID: ${task.id}</h2>
+			<h2 style = "font-family: 'Josefin Sans', sans-serif;">Task ID: ${task.id}</h2>
 			<hr>
 		<div class = " row justify-content-center">
 
@@ -41,9 +42,9 @@
 					</ul>
 					
 					<div class="mt-5">
-			<a class="btn btn-info" href = "${pageContext.request.contextPath}/tasks">Volver</a> 
-			<a class="btn btn-success" href = "${pageContext.request.contextPath}/tasks/${task.id}/edit">Editar</a> 
-			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/tasks/${task.id}/delete">Borrar</a>
+			<a class="btn btn-info" href = "${pageContext.request.contextPath}/tasks">Go back</a> 
+			<a class="btn btn-success" href = "${pageContext.request.contextPath}/tasks/${task.id}/edit">Edit</a> 
+			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/tasks/${task.id}/delete">Delete</a>
 
 			
 			</div>

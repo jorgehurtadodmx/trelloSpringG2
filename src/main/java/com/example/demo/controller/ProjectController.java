@@ -35,6 +35,18 @@ public class ProjectController {
 	private UserRepository userRepository;
 	
 	// main project site
+	
+	@GetMapping("/index")
+	public String goIndex(Model model) {
+		return "index";
+	}
+	
+	@GetMapping("/indextest")
+	public String goIndexTest(Model model) {
+		return "indextest";
+	}
+	
+	
 	@GetMapping("/projects")
 	public String findProject(Model model) {
 		model.addAttribute("project", projectRepository.findAll());

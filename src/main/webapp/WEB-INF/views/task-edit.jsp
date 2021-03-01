@@ -6,13 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>User creation</title>
+<title>Task creation/modification</title>
+   <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
-	
+		<jsp:include page="navbar.jsp"></jsp:include>
 	<div class = "pt-5 container">
-			<h2>Task ID: ${task.id}</h2>
+			<h2 style = "font-family: 'Josefin Sans', sans-serif;">Task ID: ${task.id}</h2>
 			<hr>
 		<div class = " row justify-content-center">
 
@@ -32,7 +33,7 @@
 
 <!-- 					selector una opción -->
 					<div class="form-group">
-						<label for="project">Proyecto</label>
+						<label for="project">Project</label>
 						<form:select class="form-select form-select-lg mb-3" path="project" items="${projects}" itemLabel="name" itemValue="id"></form:select>
 					</div>
 <!-- 					Selectores múltiples-->
