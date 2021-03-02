@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
+import com.example.demo.entities.Project;
 import com.example.demo.entities.Task;
 import com.example.demo.entities.User;
 import com.example.demo.repository.ProjectRepository;
@@ -79,6 +81,17 @@ public class TaskController {
 		taskRepository.deleteById(id);
 		return "redirect:/tasks";
 	}
+	
+	//deletion of ALL tasks
+	@GetMapping("/tasks/delete/all")
+	public String borrarProjectos() {
+
+		List<Task> tasks = taskRepository.findAll();
+
+		taskRepository.deleteAll();
+		return "redirect:/tasks"; //fallo
+	}
+	
 	
 	//editing single user
 	@GetMapping("/tasks/{id}/edit")

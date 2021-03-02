@@ -21,7 +21,7 @@
 					<p><b>Name</b>: ${task.title}</p>
 					<p><b>Description</b>: ${task.description}</p>
 					
-					<p><b>Belongs to Project:</b>: ${task.project.name}</p>
+					<p><b>Belongs to Project:</b> ${task.project.name}</a></p>
 					
 					<h3>Assigned Users</h3>
 					

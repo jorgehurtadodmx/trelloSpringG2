@@ -15,6 +15,7 @@ import com.example.demo.entities.Project;
 import com.example.demo.entities.Task;
 import com.example.demo.entities.User;
 import com.example.demo.repository.ProjectRepository;
+import com.example.demo.repository.TaskRepository;
 import com.example.demo.repository.UserRepository;
 
 @Controller
@@ -25,7 +26,8 @@ public class UserController {
 	
 	@Autowired
 	private ProjectRepository projectRepository;
-	
+	@Autowired
+	private TaskRepository taskRepository;
 	
 	@GetMapping("/users")
 	public String findUsers(Model model) {
@@ -79,8 +81,8 @@ public class UserController {
 	}
 
 	//deletion of single project
-	//@GetMapping("/projects/{id}/delete")
-//	public String borrarProjecto(@PathVariable Long id) {
+//	@GetMapping("/projects/{id}/delete")
+	//public String borrarProjectoA(@PathVariable Long id) {
 	//	Optional<Project> projectOpt = projectRepository.findById(id);
 	//	if (!projectOpt.isPresent()) 
 	//		return "redirect:/projects";

@@ -36,14 +36,23 @@ public class ProjectController {
 	
 	// main project site
 	
-	@GetMapping("/index")
-	public String goIndex(Model model) {
-		return "index";
+	//@GetMapping("/index")
+	//public String goIndex(Model model) {
+	//	return "index";
+	//}
+	
+	//@GetMapping("/indextest")
+	//public String goIndexTest(Model model) {
+	//	return "indextest";
+	//}
+	@GetMapping("/")
+	public String goWelcomeFromNothing(Model model) {
+		return "welcome";
 	}
 	
-	@GetMapping("/indextest")
-	public String goIndexTest(Model model) {
-		return "indextest";
+	@GetMapping("/welcome")
+	public String goWelcome(Model model) {
+		return "welcome";
 	}
 	
 	

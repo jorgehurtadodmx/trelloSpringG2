@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 
-        <footer class="mt-5 bg-dark text-white" class="fixed-bottom">
+        <footer class="mt-5 bg-dark text-white" class="fixed-bottom" >
         	<div class="footer-top pt-5">
 		        <div class="container">
 		        	<div class="row">

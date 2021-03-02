@@ -5,7 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title herasaede</title>
+ <link href="<c:url value="/resources/css/indexstyle.css" />" rel="stylesheet">
+ <link href="<c:url value="/../../../resources/" />" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/webapp/WEB-INF/views/indexstyle.css">
+<link rel="stylesheet" href="webapp/WEB-INF/views/indexstyle.css">
+<link rel="stylesheet" href="webapp/WEB-INF/views/indexstyle.css">
 </head>
  <body id="page-top">
         <!-- Navigation-->
