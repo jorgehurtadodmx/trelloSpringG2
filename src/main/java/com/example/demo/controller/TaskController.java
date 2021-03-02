@@ -87,7 +87,6 @@ public class TaskController {
 	public String borrarProjectos() {
 
 		List<Task> tasks = taskRepository.findAll();
-
 		taskRepository.deleteAll();
 		return "redirect:/tasks"; //fallo
 	}

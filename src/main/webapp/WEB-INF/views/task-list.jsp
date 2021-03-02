@@ -43,7 +43,7 @@
 					
 					<td>
 
-						<c:forEach items="${task.users}" var="user">
+						<c:forEach items="${task.project.users}" var="user">
 							<span class="badge bg-success text-white">${user.firstName}</span>
 						</c:forEach> <%-- añadir <a> links que redirigan a user-view--%>
 					

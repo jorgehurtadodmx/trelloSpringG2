@@ -26,7 +26,7 @@
 					<h3>Assigned Users</h3>
 					
 					<ul>
-						<c:forEach items="${task.users}" var="user">
+						<c:forEach items="${task.project.users}" var="user">
 							<li> <a href="${pageContext.request.contextPath}/users/${user.id}/view">${user.firstName}</a> </li>
 						</c:forEach>
 					</ul>
