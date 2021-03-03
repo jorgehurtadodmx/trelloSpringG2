@@ -5,8 +5,11 @@
 <html>
 <head>
 <title>User list</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
@@ -18,8 +21,8 @@
 		<p>${NOTIFICATION}</p>
 		
 		<p>
-			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/users/new">Add user</a>
-			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/users/delete/all">Delete all users</a>
+			<a class = "btn btn-primary fa fa-plus" href="${pageContext.request.contextPath}/users/new"></a>
+			<a class = "btn btn-danger fa fa-times" href="${pageContext.request.contextPath}/users/delete/all"></a>
 			
 		</p>
 	
@@ -52,9 +55,9 @@
 					</td>
 					
 					<td> 
-						<a class="btn btn-info" href = "${pageContext.request.contextPath}/users/${user.id}/view">View</a> 
-						<a class="btn btn-success" href = "${pageContext.request.contextPath}/users/${user.id}/edit">Edit</a> 
-						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/users/${user.id}/delete">Delete</a>
+						<a class="btn btn-info fa fa-eye" href = "${pageContext.request.contextPath}/users/${user.id}/view"></a> 
+						<a class="btn btn-success fa fa-pencil" href = "${pageContext.request.contextPath}/users/${user.id}/edit"></a> 
+						<a class="btn btn-danger fa fa-trash" href = "${pageContext.request.contextPath}/users/${user.id}/delete"></a>
 						 
 					</td>
 				</tr>

@@ -5,6 +5,9 @@
 <html>
 <head>
 <title>Project list</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
 </head>
@@ -19,8 +22,8 @@
 		<p>${NOTIFICATION}</p>
 		
 		<p>
-			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/projects/new">Add project</a>
-			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/projects/delete/all">Delete all projects</a>
+			<a class = "btn btn-primary fa fa-plus" href="${pageContext.request.contextPath}/projects/new"></a>
+			<a class = "btn btn-danger fa fa-times" href="${pageContext.request.contextPath}/projects/delete/all"></a>
 			
 		</p>
 	
@@ -34,7 +37,7 @@
 				<th>Actions</th>
 			</tr>
 			
-			<c:forEach items="${project}" var="project">
+			<c:forEach items="${project}" var="project"> <%-- hidden aqui --%>
 			
 				<tr>
 					<td>${project.name}</td>
@@ -56,10 +59,9 @@
 
 
 					<td> 
-						<a class="btn btn-info" href = "${pageContext.request.contextPath}/projects/${project.id}/view">View</a> 
-						<a class="btn btn-success" href = "${pageContext.request.contextPath}/projects/${project.id}/edit">Edit</a> 
-						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/projects/${project.id}/delete">Delete</a>
-						 
+						<a class="btn btn-info fa fa-eye" href = "${pageContext.request.contextPath}/projects/${project.id}/view"></a> 
+						<a class="btn btn-success fa fa-pencil" href = "${pageContext.request.contextPath}/projects/${project.id}/edit"></a> 
+						<a class="btn btn-danger fa fa-trash"  href = "${pageContext.request.contextPath}/projects/${project.id}/delete"></a>
 					</td>
 				</tr>
 				

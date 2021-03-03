@@ -6,7 +6,7 @@
 <head>
 <title>Task list</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,8 +19,8 @@
 		<p>${NOTIFICATION}</p>
 		
 		<p>
-			<a class = "btn btn-primary" href="${pageContext.request.contextPath}/tasks/new">Add task</a>
-			<a class = "btn btn-danger" href="${pageContext.request.contextPath}/tasks/delete/all">Delete all tasks</a>
+			<a class = "btn btn-primary fa fa-plus" href="${pageContext.request.contextPath}/tasks/new"></a>
+			<a class = "btn btn-danger fa fa-times" href="${pageContext.request.contextPath}/tasks/delete/all"></a>
 			
 		</p>
 	
@@ -60,9 +60,9 @@
 					</td>
 					
 					<td> 
-						<a class="btn btn-info" href = "${pageContext.request.contextPath}/tasks/${task.id}/view">View</a> 
-						<a class="btn btn-success" href = "${pageContext.request.contextPath}/tasks/${task.id}/edit">Edit</a> 
-						<a class="btn btn-danger" href = "${pageContext.request.contextPath}/tasks/${task.id}/delete">Delete</a>
+						<a class="btn btn-info fa fa-eye" href = "${pageContext.request.contextPath}/tasks/${task.id}/view"></a> 
+						<a class="btn btn-success fa fa-pencil" href = "${pageContext.request.contextPath}/tasks/${task.id}/edit"></a> 
+						<a class="btn btn-danger fa fa-trash" href = "${pageContext.request.contextPath}/tasks/${task.id}/delete"></a>
 						 
 					</td>
 				</tr>

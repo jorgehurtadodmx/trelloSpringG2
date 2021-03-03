@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Project view</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +24,7 @@
 					
 					
 					
-					<h3>Assigned Users</h3>
+					<p><b>Assigned Users:</b></p>
 					
 					<ul>
 						<c:forEach items="${project.users}" var="user">
@@ -33,7 +34,7 @@
 					
 					
 					
-					<h3>Assigned Tasks</h3>
+					<p><b>Assigned Tasks:</b></p>
 					
 					<ul>
 						<c:forEach items="${project.tasks}" var="task">
@@ -42,9 +43,9 @@
 					</ul>
 					
 					<div class="mt-5">
-			<a class="btn btn-info" href = "${pageContext.request.contextPath}/projects">Go back</a> 
-			<a class="btn btn-success" href = "${pageContext.request.contextPath}/projects/${project.id}/edit">Edit</a> 
-			<a class="btn btn-danger" href = "${pageContext.request.contextPath}/projects/${project.id}/delete">Delete</a>
+			<a class="btn btn-info fa fa-arrow-left" href = "${pageContext.request.contextPath}/projects"></a> 
+			<a class="btn btn-success fa fa-pencil" href = "${pageContext.request.contextPath}/projects/${project.id}/edit"></a> 
+			<a class="btn btn-danger fa fa-trash" href = "${pageContext.request.contextPath}/projects/${project.id}/delete"></a>
 
 			
 			</div>
@@ -53,7 +54,7 @@
 		</div>
 	</div>
 	
-
+<jsp:include page="footer.jsp"></jsp:include>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
