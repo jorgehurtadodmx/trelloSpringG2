@@ -41,7 +41,7 @@
 					</div>
 					<div class="form-group">
 						<label for="password"><b>Password</b></label>
-						<form:input path="password" class="form-control" />
+						<form:input path="password" class="form-control" type="password"/>
 					</div>
 
 				
