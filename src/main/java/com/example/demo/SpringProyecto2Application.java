@@ -89,8 +89,8 @@ public class SpringProyecto2Application implements CommandLineRunner{
 		task1.setProject(project2);
 		task1.setUsers(usersproject2);
 		task1.getTags().add(todo);
-		task1.getTags().add(inprogress);
-		Task task2 = new Task("tareanumero2","descriptiontask2",usersproject2, project2, tags);
+
+		Task task2 = new Task("tareanumero2","descriptiontask2",usersproject2, project2, new ArrayList<>());
 		taskRepository.save(task2);
 		
 		Task task3 = new Task();

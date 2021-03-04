@@ -81,8 +81,8 @@ public class UserController {
 	}
 
 	//deletion of single project
-//	@GetMapping("/projects/{id}/delete")
-	//public String borrarProjectoA(@PathVariable Long id) {
+	@GetMapping("/users/{id}/delete")
+	public String borrarProjectoA(@PathVariable Long id) {
 	//	Optional<Project> projectOpt = projectRepository.findById(id);
 	//	if (!projectOpt.isPresent()) 
 	//		return "redirect:/projects";
@@ -95,9 +95,9 @@ public class UserController {
 	//	}
 	//	taskRepository.saveAll(project.getTasks());
 		
-	//	projectRepository.deleteById(id);
-	//	return "redirect:/projects"; //fallo
-	//}
+		userRepository.deleteById(id);
+		return "redirect:/users"; //fallo
+	}
 
 	
 	

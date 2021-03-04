@@ -17,7 +17,7 @@
 	                    <div class="col-md-4"></div>
 		        		<div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
 		        			<h4>Contact</h4>
-		                	<p></i> Sun Street, Trello building</p>
+		                	<p></i> Trello street</p>
 		                	<p></i> Phone: (0039) 333 12 68 347</p>
 		                	<p></i> Email: trello@support.com</p>
 	                    </div>

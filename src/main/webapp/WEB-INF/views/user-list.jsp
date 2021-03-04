@@ -34,7 +34,6 @@
 				<th>Age</th>
 				<th>Email</th> 
 				<th>Password</th>
-				<th>Project List</th>
 				<th>Actions</th>
 			</tr>
 			
@@ -46,14 +45,14 @@
 					<td>${user.age}</td>
 					<td>${user.email}</td>
 					<td>${user.password}</td>
-					<td>
+				<%-- 	<td>
 					
 						<c:forEach items="${user.projects}" var="project">
 							<span class="badge bg-info text-white">${project.name}</span>
 						</c:forEach>
 
 					</td>
-					
+					--%>
 					<td> 
 						<a class="btn btn-info fa fa-eye" href = "${pageContext.request.contextPath}/users/${user.id}/view"></a> 
 						<a class="btn btn-success fa fa-pencil" href = "${pageContext.request.contextPath}/users/${user.id}/edit"></a> 
