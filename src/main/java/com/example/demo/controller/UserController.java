@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,8 +82,8 @@ public class UserController {
 	}
 
 	//deletion of single project
-	@GetMapping("/users/{id}/delete")
-	public String borrarProjectoA(@PathVariable Long id) {
+//	@GetMapping("/users/{id}/delete")
+	//public String borrarUserA(@PathVariable Long id) {
 	//	Optional<Project> projectOpt = projectRepository.findById(id);
 	//	if (!projectOpt.isPresent()) 
 	//		return "redirect:/projects";
@@ -95,10 +96,76 @@ public class UserController {
 	//	}
 	//	taskRepository.saveAll(project.getTasks());
 		
-		userRepository.deleteById(id);
-		return "redirect:/users"; //fallo
-	}
+	//	userRepository.deleteById(id);
+	//	return "redirect:/users"; //fallo
+	//}
 
+	
+//	@GetMapping("/users/{id}/delete")
+	//public String deleteSingleUser(@PathVariable Long id) {
+	//	Optional<User> userOpt = userRepository.findById(id);
+	//		if (!userOpt.isPresent()) 
+		//		return "redirect:/users";
+			
+		//	User user = userOpt.get();
+			
+	//	for (Task task: user.getTasks()) {
+				//task.setTags(new ArrayList<>());
+		//		user.setProjects(new ArrayList<>());
+		//	}
+		//	projectRepository.saveAll(user.getProjects());
+			
+		//	userRepository.deleteById(id);
+		
+		
+		
+		
+		//return "redirect:/users";
+//}
+	
+	@GetMapping("/users/{id}/delete")
+	public String deleteSingleUser(@PathVariable Long id) {
+		userRepository.deleteById(id);
+		
+		
+		
+		return "redirect:/users";
+	}
+	
+	@GetMapping("/users/delete/all")
+	public String deleteAllUsers() {
+
+		List<User> users = userRepository.findAll();
+		//for (User user : projects) {
+	
+		//	taskRepository.saveAll(project.getTasks());
+	//	}
+		userRepository.deleteAll();
+		return "redirect:/users";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

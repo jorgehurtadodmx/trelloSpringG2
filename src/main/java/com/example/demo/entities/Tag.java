@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Tag implements Serializable{
 	
 	private String color;
 	
-	@ManyToMany(mappedBy="tags")
+	@ManyToMany(mappedBy="tags", cascade = CascadeType.REMOVE)
 	private List<Task> tasks = new ArrayList<Task>();
 	
 	
@@ -34,12 +35,20 @@ public class Tag implements Serializable{
 	
 	
 	
-	public Tag(String name, String color) {
+
+
+
+
+	public Tag(String name, String color, List<Task> tasks) {
 		super();
 		this.name = name;
 		this.color = color;
-
+		this.tasks = tasks;
 	}
+
+
+
+
 
 
 

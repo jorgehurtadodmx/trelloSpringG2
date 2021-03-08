@@ -22,7 +22,7 @@
 	<tr>
 		<td><b><a class="btn btn-white" 
 		href = "${pageContext.request.contextPath}/users/new"  
-		style="font-size:50px; font-family: 'Josefin Sans', sans-serif;">Click to start your Trello experience</a> </b></td>
+		style="font-size:50px; font-family: 'Josefin Sans', sans-serif;">Click here to start your Trello experience</a> </b></td>
 		
 	</tr>
 

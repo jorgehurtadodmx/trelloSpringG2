@@ -38,15 +38,22 @@ public class User implements Serializable{
 	@Column(name="password")
 	private String password;
 	
-	@ManyToMany (mappedBy="users")
+	@ManyToMany (mappedBy="users", cascade = CascadeType.REMOVE)
 	private List<Project> projects = new ArrayList<Project>();
+	
+	@ManyToMany (mappedBy="users", cascade = CascadeType.REMOVE)
+	private List<Task> tasks = new ArrayList<Task>();
+	
 	
 	public User() {}
 
-	
-	
-	
-	public User(String firstName, String lastName, Integer age, String email, String password, List<Project> projects) {
+
+
+
+
+
+	public User(String firstName, String lastName, Integer age, String email, String password, List<Project> projects,
+			List<Task> tasks) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -54,7 +61,10 @@ public class User implements Serializable{
 		this.email = email;
 		this.password = password;
 		this.projects = projects;
+		this.tasks = tasks;
 	}
+
+
 
 
 
@@ -114,6 +124,24 @@ public class User implements Serializable{
 	public void setProjects(List<Project> projects) {
 		this.projects = projects;
 	}
+
+
+
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+
+
+
+
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
+	}
+
+
 
 
 

@@ -44,7 +44,7 @@ public class SpringProyecto2Application implements CommandLineRunner{
 
 		//users
 		
-		User user1 = new User("Meme", "lopez",28,"meme@gmail.com","noteladigo", new ArrayList<>());
+		User user1 = new User("Meme", "lopez",28,"meme@gmail.com","noteladigo", new ArrayList<>(), new ArrayList<>());
 		userRepository.save(user1);
 		
 		User user2 = new User();

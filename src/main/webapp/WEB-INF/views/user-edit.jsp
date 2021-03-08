@@ -37,7 +37,7 @@
 					</div>
 					<div class="form-group">
 						<label for="email"><b>Email</b></label>
-						<form:input path="email" class="form-control" />
+						<form:input path="email" class="form-control" type="email" />
 					</div>
 					<div class="form-group">
 						<label for="password"><b>Password</b></label>

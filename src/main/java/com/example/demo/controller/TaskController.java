@@ -84,7 +84,7 @@ public class TaskController {
 	
 	//deletion of ALL tasks
 	@GetMapping("/tasks/delete/all")
-	public String borrarProjectos() {
+	public String borrarTasks() {
 
 		List<Task> tasks = taskRepository.findAll();
 		taskRepository.deleteAll();
