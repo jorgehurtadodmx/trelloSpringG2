@@ -11,7 +11,7 @@
 <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style >
 	<jsp:include page="navbar.jsp"></jsp:include>
 	<div class = "pt-5 container">
 		
