@@ -26,7 +26,7 @@
 		</div>
 		
 		<div class="col-6">
-		<h4 style = "font-family: 'Josefin Sans', sans-serif;"><b>If want to contact with us, feel free to send a message here.</b></h4>
+		<h4 style = "font-family: 'Josefin Sans', sans-serif;"><b>If you want to contact with us, feel free to send a message.</b></h4>
 		<div style ="text-align: left; " >
 	<form>
 	 <div class="mb-6 mt-5">
